@@ -19,7 +19,7 @@ const FooterLink = styled(Link)`
 
 const Footer = () => (
     <FooterContainer>
-        <FooterLink to="/page-2/">How it works</FooterLink>
+        <FooterLink to="/howitworks/">How it works</FooterLink>
         <FooterLink to="/contact/">Contact us</FooterLink>
     </FooterContainer>
 )

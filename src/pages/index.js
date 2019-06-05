@@ -34,6 +34,7 @@ const HomeBg = styled.img`
   right: 0;
   max-width: 500px;
   z-index: -1;
+  margin-top: -100px;
 
   @media (max-width: 800px){
     position: relative;
@@ -50,7 +51,7 @@ const HomeBg = styled.img`
 const BgImg1 = styled.img`
   position: absolute;
   max-width: 500px;
-  margin-left: -100px;
+  margin: -100px 0 0 -100px;
   z-index: -2;
   
   @media (max-width: 800px){
@@ -64,6 +65,7 @@ const BgImg2 = styled.img`
   bottom: 0;
   margin: 0 0 0 200px; 
   z-index: -2;
+  opacity: .5;
 
   @media (max-width: 800px){
     display: none;
