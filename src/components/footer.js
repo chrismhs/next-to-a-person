@@ -6,7 +6,11 @@ import PropTypes from "prop-types"
 const FooterContainer = styled.footer `
     position: absolute;
     bottom: 0;
-    padding-bottom: 20px;
+    padding: 20px 0;
+
+    @media (max-width: 800px){
+        position: relative;
+    }
 `
 
 const FooterLink = styled(Link)`
