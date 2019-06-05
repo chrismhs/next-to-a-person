@@ -10,6 +10,7 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
+import Footer from "./footer"
 
 import "./layout.css"
 
@@ -18,6 +19,8 @@ const Page = styled.div`
   margin: 0 auto;
   padding: 0px 1.0875rem 1.45rem;
   position: relative;
+  height: 100vh;
+  min-height: 600px;
 `
 
 const Layout = ({ children }) => (
@@ -35,10 +38,7 @@ const Layout = ({ children }) => (
       <>
         <Page>
           <main>{children}</main>
-          <footer>
-            <a>How it works</a>
-            <a>Contact us</a>
-          </footer>
+          <Footer />
         </Page>
       </>
     )}

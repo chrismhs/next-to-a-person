@@ -9,7 +9,10 @@ import homeImg from "../images/bg-person.png"
 
 const Description = styled.div`
   width: 50%;
-  padding-top: 100px;
+  top: 50%;
+  position: absolute;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 
   @media (max-width: 600px){
     width: 100%;
