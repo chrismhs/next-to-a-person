@@ -35,31 +35,27 @@ const BgImg1 = styled.img`
 
 const FormContainer = styled.div`
   position: relative;
-  display: flex;
-  align-items: center;
-  width: 60%;
+  width: 45%;
   margin: 48px 0;
   background: white;
-  padding: 0 0 0 24px;
-  border-radius: 8px;
-  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
   @media (max-width: 800px) {
     width: 100%;
   }
 `
 
 const SubmitButton = styled.label`
-  /* position: absolute; */
-  /* right: 0;
-  top: 0; */
   cursor: pointer;
-  background-color: #1097b5;
-  padding: 24px 24px 16px;
-  border-radius: 0 8px 8px 0;
-  transition: padding 0.2s ease-in-out;
+  background-color: rgb(16, 151, 181);
+  padding: 18px 32px;
+  border-radius: 32px;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
 
   :hover {
-    padding: 24px 20px 16px 28px;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgb(16, 124, 148);
   }
 `
 
@@ -84,14 +80,18 @@ const BackgroundImage = styled.div`
   padding: 70px;
   z-index: -2;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     background-image: none;
+  }
+
+  @media (max-width: 800px) {
     position: relative;
     left: 0%;
     top: 0%;
     width: 100%;
-    height: 500px;
+    height: 400px;
     max-width: 400px;
+    padding: 30px;
   }
 `
 
@@ -103,8 +103,8 @@ const IndexPage = () => (
       <TextContainer>
         <h1>Next to a person</h1>
         <p>
-          Check the size of things before you buy them, by putting them{" "}
-          <i>next to a person</i>.
+          Check the size of things on Amazon before you buy them, by putting
+          them <i>next to a person</i>.
         </p>
       </TextContainer>
       <FormContainer>
@@ -115,20 +115,7 @@ const IndexPage = () => (
         />
         <SubmitButton>
           <Input type="submit" />
-          <svg
-            width="38"
-            height="38"
-            viewBox="0 0 38 38"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M33.5859 20L0 20V18L33.5857 18L17.2929 1.70718L18.7071 0.292969L37.4142 19.0001L18.7071 37.7072L17.2929 36.293L33.5859 20Z"
-              fill="white"
-            />
-          </svg>
+          Measure it!
         </SubmitButton>
       </FormContainer>
     </Description>
