@@ -70,11 +70,12 @@ const BackgroundImage = styled.div`
   background-position: center top;
   background-repeat: no-repeat;
   background-size: contain;
+  border-radius: 150px 0 0 0;
   position: absolute;
   left: 50%;
-  top: 0%;
+  top: 5%;
   width: 50%;
-  /* height: 100%; */
+
   max-height: 700px;
   margin: 0 auto;
   padding: 70px;

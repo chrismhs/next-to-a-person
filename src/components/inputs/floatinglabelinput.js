@@ -133,28 +133,28 @@ export default class TextInput extends React.PureComponent {
                   y1="2.18557e-08"
                   x2="0.5"
                   y2="8"
-                  stroke="#1D1E3E"
+                  stroke="rgb(16,151,181)"
                 />
                 <line
                   x1="4.5"
                   y1="2.18557e-08"
                   x2="4.5"
                   y2="5"
-                  stroke="#1D1E3E"
+                  stroke="rgb(16,151,181)"
                 />
                 <line
                   x1="8.5"
                   y1="2.18557e-08"
                   x2="8.5"
                   y2="5"
-                  stroke="#1D1E3E"
+                  stroke="rgb(16,151,181)"
                 />
                 <line
                   x1="12.5"
                   y1="2.18557e-08"
                   x2="12.5"
                   y2="5"
-                  stroke="#1D1E3E"
+                  stroke="rgb(16,151,181)"
                 />
               </pattern>
             </defs>
