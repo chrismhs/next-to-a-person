@@ -28,7 +28,6 @@ const TextContainer = styled.div`
 
 const BgImg1 = styled.img`
   position: absolute;
-  max-width: 500px;
   margin: -100px 0 0 -100px;
   z-index: -2;
 `
