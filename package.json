@@ -21,6 +21,7 @@
     "react-helmet": "^5.2.1",
     "styled-components": "^4.2.0",
     "typeface-playfair-display": "0.0.72",
+    "typeface-poppins": "0.0.72",
     "typeface-quicksand": "0.0.71"
   },
   "devDependencies": {
