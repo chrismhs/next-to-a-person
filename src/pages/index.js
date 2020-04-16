@@ -112,7 +112,6 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <SEO title="Home" />
         <Description>
           <TextContainer>
             <h1>Next to a person</h1>
