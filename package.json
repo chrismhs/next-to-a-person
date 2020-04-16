@@ -1,14 +1,15 @@
 {
   "name": "next-to-a-person",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Check the size of things before you buy them, by putting them next to a person.",
   "version": "0.1.1",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Chris Hastings-Spital & Joao Vitor Martins",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
     "core-js": "^3.6.5",
     "gatsby": "^2.20.22",
     "gatsby-image": "^2.1.0",
+    "gatsby-plugin-google-analytics": "^2.2.3",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-react-helmet": "^3.0.12",
