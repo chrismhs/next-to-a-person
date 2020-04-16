@@ -24,8 +24,9 @@ const FooterLink = styled(Link)`
 
 const Footer = () => (
   <FooterContainer>
-    <FooterLink to="/howitworks/">How it works</FooterLink>
-    <FooterLink to="/contact/">Contact us</FooterLink>
+    <FooterLink to="/">Home</FooterLink>
+    <FooterLink to="/whatisthis/">What is this?</FooterLink>
+    {/* <FooterLink to="/contact/">Contact us</FooterLink> */}
   </FooterContainer>
 )
 

@@ -16,18 +16,18 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `Next to a Person`,
-    //     short_name: `ntap`,
-    //     start_url: `/`,
-    //     background_color: `#1097B5`,
-    //     theme_color: `#1097B5`,
-    //     display: `ntap`,
-    //     icon: `src/images/icon-512x512.png`, // This path is relative to the root of the site.
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Next to a Person`,
+        short_name: `ntap`,
+        start_url: `/`,
+        background_color: `#1097B5`,
+        theme_color: `#1097B5`,
+        display: `ntap`,
+        icon: `src/images/icon-512x512.png`, // This path is relative to the root of the site.
+      },
+    },
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {

@@ -218,6 +218,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  font-display: optional;
 }
 img {
   max-width: 100%;
@@ -240,7 +241,7 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: rgb(29, 30, 62);
-  font-family: soleil, serif;
+  font-family: soleil, sans-serif;
   font-weight: 800;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
@@ -249,54 +250,58 @@ h1 {
   font-size: 4.5rem;
   line-height: 1.1;
   letter-spacing: -0.05rem;
+  font-display: optional;
 }
 h2 {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
+  margin-top: 3rem;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Playfair Display", serif;
+  font-family: soleil, sans-serif;
   font-weight: 800;
   text-rendering: optimizeLegibility;
-  font-size: 1.62671rem;
+  font-size: 2.5rem;
   line-height: 1.1;
+  font-display: optional;
 }
 h3 {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
+  margin-top: 3rem;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Playfair Display", serif;
+  font-family: soleil, sans-serif;
   font-weight: 800;
   text-rendering: optimizeLegibility;
-  font-size: 1.38316rem;
+  font-size: 1.5rem;
   line-height: 1.1;
+  font-display: optional;
 }
 h4 {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 0;
+  margin-top: 3rem;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Playfair Display", serif;
+  font-family: soleil, sans-serif;
   font-weight: 800;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
   line-height: 1.1;
+  font-display: optional;
 }
 h5 {
   margin-left: 0;
@@ -308,11 +313,12 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: "Playfair Display", serif;
+  font-family: soleil, sans-serif;
   font-weight: 800;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
   line-height: 1.1;
+  font-display: optional;
 }
 
 hgroup {

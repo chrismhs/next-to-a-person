@@ -8,7 +8,6 @@ import SEO from "../components/seo"
 import FloatingLabelInput from "../components/inputs/floatinglabelinput"
 
 import Svg from "../images/ntap-people.js"
-import backgroundShape1 from "../images/gradient-semi.svg"
 
 const Description = styled.div`
   @media (max-width: 800px) {
@@ -24,12 +23,6 @@ const TextContainer = styled.div`
   @media (max-width: 800px) {
     width: 100%;
   }
-`
-
-const BgImg1 = styled.img`
-  position: absolute;
-  margin: -100px 0 0 -100px;
-  z-index: -2;
 `
 
 const FormContainer = styled.div`
@@ -97,7 +90,6 @@ const BackgroundImage = styled.div`
 
 const IndexPage = () => (
   <Layout>
-    <BgImg1 src={backgroundShape1} />
     <SEO title="Home" />
     <Description>
       <TextContainer>

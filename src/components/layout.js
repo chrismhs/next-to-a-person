@@ -12,6 +12,8 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Footer from "./footer"
 
+import backgroundShape1 from "../images/gradient-semi.svg"
+
 import "./layout.css"
 
 const Page = styled.div`
@@ -21,6 +23,12 @@ const Page = styled.div`
   position: relative;
   height: 100vh;
   min-height: 600px;
+`
+
+const BgImg1 = styled.img`
+  position: fixed;
+  margin: -100px 0 0 -100px;
+  z-index: -2;
 `
 
 const Layout = ({ children }) => (
@@ -37,6 +45,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Page>
+          <BgImg1 src={backgroundShape1} />
           <main>{children}</main>
           <Footer />
         </Page>
