@@ -22,10 +22,10 @@ module.exports = {
         name: `Next to a Person`,
         short_name: `ntap`,
         start_url: `/`,
-        background_color: `#603813`,
-        theme_color: `#603813`,
+        background_color: `#1097B5`,
+        theme_color: `#1097B5`,
         display: `ntap`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon-512x512.png`, // This path is relative to the root of the site.
       },
     },
     {
