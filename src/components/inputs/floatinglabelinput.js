@@ -2,8 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const Container = styled.div`
-  height: 80px;
-  margin-bottom: 32px;
+  height: 60px;
 `
 
 const FloatingLabelInput = styled.div`
