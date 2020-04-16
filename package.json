@@ -23,7 +23,8 @@
     "styled-components": "^4.2.0",
     "typeface-playfair-display": "0.0.72",
     "typeface-poppins": "0.0.72",
-    "typeface-quicksand": "0.0.71"
+    "typeface-quicksand": "0.0.71",
+    "typescript": "^3.8.3"
   },
   "devDependencies": {
     "prettier": "^1.17.1"
