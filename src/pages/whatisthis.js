@@ -57,7 +57,6 @@ const WhatIsThis = () => (
         </a>
         !
       </p>
-      <Link to="/">Home</Link>
     </Container>
   </Layout>
 )

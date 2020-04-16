@@ -17,6 +17,11 @@ const FloatingLabelInputContainer = styled.div`
   position: relative;
   height: 2em;
   font-size: inherit;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   /* border-bottom: 1px solid #1d1e3e; */
 `
 

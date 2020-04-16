@@ -44,6 +44,11 @@ const SubmitButton = styled.label`
   font-weight: 500;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease-in-out;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   :hover {
     box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
