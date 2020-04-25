@@ -20,7 +20,7 @@ const WhatIsThis = () => (
       <h2>What is this?</h2>
       <p>
         Next to a Person is a small project by{" "}
-        <a href="https://github.com/jvmartins" target="_blank">
+        <a href="https://jvmartins.com" target="_blank">
           Joao
         </a>{" "}
         and{" "}

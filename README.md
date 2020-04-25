@@ -19,4 +19,4 @@ We do a little bit of image analysis using Cloud Vision API to remove as much wh
 
 ## 🙋‍♂️ Get involved
 
-Who knows. Theoretically, this could work with many more e-commerce websites, or could be a shopify plug-in, but we also think a 3D comparison would be intersting to build. If you want to get involved, please get in touch!
+Who knows. Theoretically, this could work with many more e-commerce websites, or could be a shopify plug-in, but we also think a 3D comparison would be interesting to build. If you want to get involved, please get in touch!

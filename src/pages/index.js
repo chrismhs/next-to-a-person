@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
@@ -102,46 +102,50 @@ const BackgroundImage = styled.div`
     padding: 30px;
   }
 `
-class IndexPage extends React.Component {
-  // autoFill() {
-  //   // document.getElementById("url-input").focus()
-  //   document.getElementById("url-input").value =
-  //     "https://www.amazon.co.uk/Intex-Massage-Heating-Accessories-Relaxation/dp/B083QF7TZY/ref=sr_1_6?dchild=1&keywords=hot+tub&qid=1587052147&sr=8-6"
-  // }
+const IndexPage = () => {
+  const [url, setUrl] = useState("")
 
-  render() {
-    return (
-      <Layout>
-        <Description>
-          <TextContainer>
-            <h1>Next to a person</h1>
-            <p>
-              Check the size of things on Amazon before you buy them, by putting
-              them <i>next to a person</i>.
-            </p>
-          </TextContainer>
-          <FormContainer>
-            <FloatingLabelInput
-              id="url-input"
-              label="Paste Amazon URL here"
-              onChange={"Test"}
-            />
-            <Autofill href="#" onClick={this.autoFill}>
-              Try an example URL
-            </Autofill>
-            <Spacer />
-            <SubmitButton>
-              <Input type="submit" />
-              Measure it!
-            </SubmitButton>
-          </FormContainer>
-        </Description>
-        <BackgroundImage>
-          <Svg />
-        </BackgroundImage>
-      </Layout>
+  function autoFill(e) {
+    setUrl(
+      "https://www.amazon.co.uk/Intex-Massage-Heating-Accessories-Relaxation/dp/B083QF7TZY/ref=sr_1_6?dchild=1&keywords=hot+tub&qid=1587052147&sr=8-6"
     )
   }
+
+  return (
+    <Layout>
+      <SEO title="Next to a person" />
+      <Description>
+        <TextContainer>
+          <h1>Next to a person</h1>
+          <p>
+            Check the size of things on Amazon before you buy them, by putting
+            them <i>next to a person</i>.
+          </p>
+        </TextContainer>
+        <FormContainer>
+          <FloatingLabelInput
+            value={url}
+            onBlur={e => setUrl(e.target.value)}
+            id="url-input"
+            label="Paste Amazon URL here"
+          />
+          <Autofill href="#" onClick={autoFill}>
+            Try an example URL
+          </Autofill>
+          <Spacer />
+          <Link to={`ntap?url=${encodeURIComponent(url)}`}>
+            <SubmitButton>
+              <Input />
+              Measure it!
+            </SubmitButton>
+          </Link>
+        </FormContainer>
+      </Description>
+      <BackgroundImage>
+        <Svg />
+      </BackgroundImage>
+    </Layout>
+  )
 }
 
 export default IndexPage
