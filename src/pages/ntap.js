@@ -17,8 +17,8 @@ const SecondPage = () => {
       const decoded = decodeURIComponent(url.searchParams.get("url"))
 
       const response = await fetch(
-        // "https://us-central1-jvmartins-projects.cloudfunctions.net/amazonNextTAP",
-        "http://localhost:8081/amazonNextTAP",
+        "https://us-central1-jvmartins-projects.cloudfunctions.net/amazonNextTAP",
+        // "http://localhost:8081/amazonNextTAP",
         {
           method: "POST",
           body: JSON.stringify({ url: decoded }),
