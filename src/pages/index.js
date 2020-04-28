@@ -107,7 +107,7 @@ const IndexPage = () => {
 
   function autoFill(e) {
     setUrl(
-      "https://www.amazon.co.uk/Intex-Massage-Heating-Accessories-Relaxation/dp/B083QF7TZY/"
+      "https://www.amazon.co.uk/Martin-Smith-Acoustic-Package-Strings/dp/B00413PFFC"
     );
     document.getElementById("url-input").focus();
   }
