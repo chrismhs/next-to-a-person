@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { Link } from "gatsby";
@@ -43,6 +43,29 @@ const ProductImage = styled.img`
     proportionalHeight ? `${proportionalHeight}px` : "auto"};
   width: ${({ proportionalWidth }) =>
     proportionalWidth ? `${proportionalWidth}px` : "auto"};
+
+  @media (max-width: 1000px) {
+    height: ${({ proportionalHeight }) =>
+      proportionalHeight ? `${proportionalHeight * 0.7}px` : "auto"};
+    width: ${({ proportionalWidth }) =>
+      proportionalWidth ? `${proportionalWidth * 0.7}px` : "auto"};
+  }
+
+  @media (max-width: 800px) {
+    height: ${({ proportionalHeight }) =>
+      proportionalHeight ? `${proportionalHeight * 0.5}px` : "auto"};
+    width: ${({ proportionalWidth }) =>
+      proportionalWidth ? `${proportionalWidth * 0.5}px` : "auto"};
+  }
+`;
+
+const ProductTitle = styled.h4`
+  max-width: 900px;
+`;
+
+const DisplayContainer = styled.div`
+  text-align: center;
+  margin-top: 50px;
 `;
 
 const NextToAPerson = () => {
@@ -51,7 +74,8 @@ const NextToAPerson = () => {
   const [imageHeight, setImageHeight] = useState();
   const [imageWidth, setImageWidth] = useState();
   const [error, setError] = useState(false);
-
+  const [title, setTitle] = useState("Next to a person");
+  const [price, setPrice] = useState();
   const person = choosePerson();
 
   useEffect(() => {
@@ -91,6 +115,8 @@ const NextToAPerson = () => {
         );
 
         const result = await response.json();
+        setTitle(result.product.title);
+        setPrice(result.product.price);
 
         const { widthPx, heightPx } = calculateImageSize(person, result);
         setImageHeight(heightPx);
@@ -112,12 +138,16 @@ const NextToAPerson = () => {
   return (
     <Layout>
       <SEO title="Your product next to a person" />
-      <h2>Next to a person</h2>
+      <Link to="/">Go back to the homepage</Link>
+      <ProductTitle>{title}</ProductTitle>
+      {price && <div>Price: {price}</div>}
       {error && (
-        <div>Not possible to retrieve dimensions for product specified</div>
+        <div>
+          Sorry! It was not possible to get your product next to a person!
+        </div>
       )}
       {image && dimensions && !error ? (
-        <Fragment>
+        <DisplayContainer>
           {person === "woman" && <Woman />}
           <ProductImage
             src={image}
@@ -125,12 +155,10 @@ const NextToAPerson = () => {
             proportionalWidth={imageWidth}
           />
           {person === "man" && <Man />}
-        </Fragment>
+        </DisplayContainer>
       ) : (
         <div>Loading</div>
       )}
-      <br />
-      <Link to="/">Go back to the homepage</Link>
     </Layout>
   );
 };
