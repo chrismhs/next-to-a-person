@@ -57,9 +57,16 @@ const ProductImage = styled.img`
     width: ${({ proportionalWidth }) =>
       proportionalWidth ? `${proportionalWidth * 0.5}px` : "auto"};
   }
+
+  @media (max-width: 500px) {
+    height: ${({ proportionalHeight }) =>
+      proportionalHeight ? `${proportionalHeight * 0.3}px` : "auto"};
+    width: ${({ proportionalWidth }) =>
+      proportionalWidth ? `${proportionalWidth * 0.3}px` : "auto"};
+  }
 `;
 
-const ProductTitle = styled.h4`
+const ProductTitle = styled.h3`
   max-width: 900px;
 `;
 

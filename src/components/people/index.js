@@ -19,6 +19,10 @@ const SizeableSvg = styled.img`
   @media (max-width: 800px) {
     height: ${REGULAR_HEIGHT_PX * 0.5}px;
   }
+
+  @media (max-width: 400px) {
+    height: ${REGULAR_HEIGHT_PX * 0.3}px;
+  }
 `;
 
 export const Man = ({}) => <SizeableSvg src={man} />;
