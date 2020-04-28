@@ -1,13 +1,13 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
+import React, { useState } from "react";
+import { Link } from "gatsby";
+import styled from "styled-components";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
-import FloatingLabelInput from "../components/inputs/floatinglabelinput"
+import FloatingLabelInput from "../components/inputs/floatinglabelinput";
 
-import Svg from "../images/ntap-people.js"
+import { PeopleHomePage } from "../components/people";
 
 const Description = styled.div`
   @media (max-width: 800px) {
@@ -15,7 +15,7 @@ const Description = styled.div`
     -ms-transform: translateY(0);
     transform: translateY(0);
   }
-`
+`;
 
 const TextContainer = styled.div`
   width: 45%;
@@ -23,7 +23,7 @@ const TextContainer = styled.div`
   @media (max-width: 800px) {
     width: 100%;
   }
-`
+`;
 
 const FormContainer = styled.div`
   position: relative;
@@ -33,16 +33,16 @@ const FormContainer = styled.div`
   @media (max-width: 800px) {
     width: 100%;
   }
-`
+`;
 
 const Autofill = styled.a`
   font-size: 0.75rem;
   display: inline-flex;
   margin: -32px 0 48px;
-`
+`;
 const Spacer = styled.div`
   display: block;
-`
+`;
 
 const SubmitButton = styled.label`
   cursor: pointer;
@@ -64,14 +64,14 @@ const SubmitButton = styled.label`
     box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
     background-color: rgb(16, 124, 148);
   }
-`
+`;
 
 const Input = styled.input.attrs({
   type: "submit",
   value: "Submit",
 })`
   display: none;
-`
+`;
 const BackgroundImage = styled.div`
   background-image: linear-gradient(#e8f3f0, #f9f6f1, #ffffff);
   background-position: center top;
@@ -94,21 +94,22 @@ const BackgroundImage = styled.div`
 
   @media (max-width: 800px) {
     position: relative;
-    left: 0%;
-    top: 0%;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 400px;
     max-width: 400px;
     padding: 30px;
   }
-`
+`;
 const IndexPage = () => {
-  const [url, setUrl] = useState("")
+  const [url, setUrl] = useState("");
 
   function autoFill(e) {
     setUrl(
-      "https://www.amazon.co.uk/Intex-Massage-Heating-Accessories-Relaxation/dp/B083QF7TZY/ref=sr_1_6?dchild=1&keywords=hot+tub&qid=1587052147&sr=8-6"
-    )
+      "https://www.amazon.co.uk/Intex-Massage-Heating-Accessories-Relaxation/dp/B083QF7TZY/"
+    );
+    document.getElementById("url-input").focus();
   }
 
   return (
@@ -125,6 +126,7 @@ const IndexPage = () => {
         <FormContainer>
           <FloatingLabelInput
             value={url}
+            onChange={e => setUrl(e.target.value)}
             onBlur={e => setUrl(e.target.value)}
             id="url-input"
             label="Paste Amazon URL here"
@@ -142,10 +144,10 @@ const IndexPage = () => {
         </FormContainer>
       </Description>
       <BackgroundImage>
-        <Svg />
+        <PeopleHomePage />
       </BackgroundImage>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

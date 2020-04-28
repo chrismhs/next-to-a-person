@@ -5,16 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import styled from "styled-components"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql } from "gatsby";
 
-import Footer from "./footer"
+import Footer from "./footer";
 
-import backgroundShape1 from "../images/gradient-semi.svg"
+import backgroundShape1 from "../images/gradient-semi.svg";
 
-import "./layout.css"
+import "./layout.css";
 
 const Page = styled.div`
   max-width: 1200px;
@@ -23,13 +23,13 @@ const Page = styled.div`
   position: relative;
   height: 100vh;
   min-height: 600px;
-`
+`;
 
 const BgImg1 = styled.img`
   position: fixed;
   margin: -100px 0 0 -100px;
   z-index: -2;
-`
+`;
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -52,10 +52,10 @@ const Layout = ({ children }) => (
       </>
     )}
   />
-)
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

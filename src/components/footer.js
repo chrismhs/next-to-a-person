@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import { Link } from "gatsby"
+import React from "react";
+import styled from "styled-components";
+import { Link } from "gatsby";
 
 const FooterContainer = styled.footer`
   position: absolute;
@@ -21,11 +21,11 @@ const FooterContainer = styled.footer`
   @media (max-height: 800px) {
     position: relative;
   }
-`
+`;
 
 const FooterLink = styled(Link)`
   margin-right: 30px;
-`
+`;
 
 const Footer = () => (
   <FooterContainer>
@@ -33,6 +33,6 @@ const Footer = () => (
     <FooterLink to="/whatisthis/">What is this?</FooterLink>
     {/* <FooterLink to="/contact/">Contact us</FooterLink> */}
   </FooterContainer>
-)
+);
 
-export default Footer
+export default Footer;

@@ -1,16 +1,16 @@
-import React from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
+import React from "react";
+import { Link } from "gatsby";
+import styled from "styled-components";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 const Container = styled.div`
   width: 60%;
   @media (max-width: 800px) {
     width: 100%;
   }
-`
+`;
 
 const WhatIsThis = () => (
   <Layout>
@@ -59,6 +59,6 @@ const WhatIsThis = () => (
       </p>
     </Container>
   </Layout>
-)
+);
 
-export default WhatIsThis
+export default WhatIsThis;
