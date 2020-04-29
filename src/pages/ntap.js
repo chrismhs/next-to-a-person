@@ -8,7 +8,6 @@ import SEO from "../components/seo";
 import Loader from "../components/loader";
 
 import { Man, Woman } from "../components/people";
-import MeasuringBar from "../images/measuringbar";
 
 const choosePerson = () => {
   const idx = Math.round(Math.random());
@@ -78,6 +77,14 @@ const ProductTitle = styled.h3`
   max-width: 900px;
 `;
 
+const AdditionalInformation = styled.div`
+  display: flex;
+`;
+
+const Price = styled.div`
+  padding: 5px;
+`;
+
 const DisplayContainer = styled.div`
   text-align: center;
   margin-top: 24px;
@@ -122,7 +129,9 @@ const NextToAPerson = () => {
         setError(false);
 
         setImage(
-          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${result.image.publicImageId}`
+          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${
+            result.image.publicImageId
+          }`
         );
         setDimensions(result.dimensions);
       } catch (e) {
@@ -143,7 +152,14 @@ const NextToAPerson = () => {
         Measure another product
       </Link>
       <ProductTitle>{title}</ProductTitle>
-      {price && <div>Price: {price}</div>}
+
+      {price && (
+        <AdditionalInformation>
+          <Price>Price: {price} | </Price>
+          <a href="">Buy this product on amazon</a>
+        </AdditionalInformation>
+      )}
+
       {error && (
         <div>
           Sorry! It was not possible to get your product next to a person!
