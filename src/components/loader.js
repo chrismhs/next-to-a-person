@@ -53,7 +53,9 @@ const Loader = () => {
   }, [loadingTextIndex]);
   return (
     <Container>
-      <div>{loadingText[loadingTextIndex].text}</div>
+      <div>
+        <i>{loadingText[loadingTextIndex].text}</i>
+      </div>
       <MeasuringLoader>
         <MeasuringBar />
       </MeasuringLoader>

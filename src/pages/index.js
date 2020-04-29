@@ -31,6 +31,7 @@ const FormContainer = styled.div`
   position: relative;
   width: 45%;
   margin: 48px 0;
+  overflow: visible;
   @media (max-width: 800px) {
     width: 100%;
   }
@@ -47,41 +48,31 @@ const Autofill = styled.a`
 `;
 
 const ButtonLink = styled(Link)`
-  border-bottom: 0px;
-  :hover {
-    border-bottom: 0px;
-    -webkit-filter: brightness(100%);
-    filter: brightness(100%);
-  }
-`;
-
-const SubmitButton = styled.label`
+  border: none;
   cursor: pointer;
-
   background-color: rgb(16, 151, 181);
   padding: 17px 32px 19px;
-  border-radius: 32px;
+  border-radius: 8px;
   color: white;
   font-weight: 500;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease-in-out;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  margin: 0;
+  overflow: visible;
 
   :hover {
+    border: none;
     background-color: rgb(16, 124, 148);
+    -webkit-filter: brightness(100%);
+    filter: brightness(100%);
+    overflow: visible;
   }
 `;
 
-const Input = styled.input.attrs({
-  type: "submit",
-  value: "Submit",
-})`
-  display: none;
-`;
 const BackgroundImage = styled.div`
   background-image: linear-gradient(#e8f3f0, #f9f6f1, #ffffff);
   background-position: center top;
@@ -154,10 +145,7 @@ const IndexPage = () => {
           </Autofill>
           <Spacer />
           <ButtonLink to={`ntap?url=${getEncodedUrlWithAffiliateId(url)}`}>
-            <SubmitButton>
-              <Input />
-              Measure it!
-            </SubmitButton>
+            Measure it!
           </ButtonLink>
         </FormContainer>
       </Description>

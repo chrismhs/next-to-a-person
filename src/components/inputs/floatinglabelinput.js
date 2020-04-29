@@ -49,6 +49,7 @@ const FloatingInput = styled.input`
   border: none;
   outline: none;
   font-size: 1em;
+  background: transparent;
   &::placeholder {
     color: #9b9b9b;
     opacity: ${props => (props.active ? 1 : 0)};
