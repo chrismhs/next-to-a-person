@@ -167,7 +167,7 @@ const NextToAPerson = () => {
           Sorry! It was not possible to get your product next to a person!
         </div>
       )}
-      {image && !error ? (
+      {image && !error && (
         <DisplayContainer>
           {person === "woman" && <Woman />}
           <ProductImage
@@ -177,9 +177,8 @@ const NextToAPerson = () => {
           />
           {person === "man" && <Man />}
         </DisplayContainer>
-      ) : (
-        <Loader />
       )}
+      {!image && !error && <Loader />}
     </Layout>
   );
 };
