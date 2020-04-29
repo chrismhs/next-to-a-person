@@ -116,7 +116,6 @@ const IssueButton = styled.button`
 
 const NextToAPerson = () => {
   const [image, setImage] = useState();
-  const [dimensions, setDimensions] = useState();
   const [imageHeight, setImageHeight] = useState();
   const [imageWidth, setImageWidth] = useState();
   const [error, setError] = useState(false);
@@ -124,11 +123,15 @@ const NextToAPerson = () => {
   const [price, setPrice] = useState();
   const person = choosePerson();
 
-  const windowUrl = window.location.href;
-  const url = new URL(windowUrl);
-  const amazonUrl = decodeURIComponent(url.searchParams.get("url"));
+  function getDecodedAmazonUrl() {
+    const windowUrl = window.location.href;
+    const url = new URL(windowUrl);
+    return decodeURIComponent(url.searchParams.get("url"));
+  }
 
   useEffect(() => {
+    const amazonUrl = getDecodedAmazonUrl();
+
     async function fetchImage() {
       try {
         const response = await fetch(
@@ -157,7 +160,6 @@ const NextToAPerson = () => {
             result.image.publicImageId
           }`
         );
-        setDimensions(result.dimensions);
       } catch (e) {
         setError(true);
       }
@@ -180,7 +182,9 @@ const NextToAPerson = () => {
       {price && (
         <AdditionalInformation>
           <Price>Price: {price} | </Price>
-          <a href="">Buy this product on Amazon</a>
+          <a target="_blank" href={getDecodedAmazonUrl()}>
+            Buy this product on Amazon
+          </a>
         </AdditionalInformation>
       )}
 
@@ -189,7 +193,7 @@ const NextToAPerson = () => {
           Sorry! It was not possible to get your product next to a person!
         </div>
       )}
-      {image && dimensions && !error ? (
+      {image && !error && (
         <DisplayContainer>
           {person === "woman" && <Woman />}
           <ProductImage
@@ -199,9 +203,8 @@ const NextToAPerson = () => {
           />
           {person === "man" && <Man />}
         </DisplayContainer>
-      ) : (
-        <Loader />
       )}
+      {!image && !error && <Loader />}
       <Feedback>
         Doesn't look right?{" "}
         <IssueButton
