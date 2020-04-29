@@ -664,7 +664,7 @@ pre tt:after {
 /* large desktops and up ----------- */
 @media screen and (min-width: 1200px) {
   h1 {
-    font-size: 5.5rem;
+    font-size: 5rem;
   }
 
   h2 {

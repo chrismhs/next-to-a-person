@@ -31,7 +31,7 @@ const WhatIsThis = () => (
         size of her hand.
       </p>
       <p>
-        Some people simply can’t do dimensions online, so we thought the best
+        Some people aren't good at dimensions online, so we thought the best
         idea would be to visually compare your purchase to people.
       </p>
       <h3>How does it work?</h3>

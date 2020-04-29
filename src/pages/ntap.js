@@ -51,7 +51,7 @@ const ProductImage = styled.img`
       proportionalWidth ? `${proportionalWidth * 0.7}px` : "auto"};
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     height: ${({ proportionalHeight }) =>
       proportionalHeight ? `${proportionalHeight * 0.5}px` : "auto"};
     width: ${({ proportionalWidth }) =>
@@ -66,13 +66,19 @@ const ProductImage = styled.img`
   }
 `;
 
+const BackArrow = styled.svg`
+  stroke: #1097b5;
+  margin: 1px 6px;
+`;
+
 const ProductTitle = styled.h3`
+  margin: 1rem 0;
   max-width: 900px;
 `;
 
 const DisplayContainer = styled.div`
   text-align: center;
-  margin-top: 50px;
+  margin-top: 24px;
 `;
 
 const NextToAPerson = () => {
@@ -131,7 +137,9 @@ const NextToAPerson = () => {
         setError(false);
 
         setImage(
-          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${result.image.publicImageId}`
+          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${
+            result.image.publicImageId
+          }`
         );
         setDimensions(result.dimensions);
       } catch (e) {
@@ -145,7 +153,12 @@ const NextToAPerson = () => {
   return (
     <Layout>
       <SEO title="Your product next to a person" />
-      <Link to="/">Go back to the homepage</Link>
+      <Link to="/">
+        <BackArrow width="7" height="10" viewBox="0 0 7 10" fill="none">
+          <path d="M6 1L2 5.02488L5.95054 9" stroke-width="2" />
+        </BackArrow>
+        Measure another product
+      </Link>
       <ProductTitle>{title}</ProductTitle>
       {price && <div>Price: {price}</div>}
       {error && (

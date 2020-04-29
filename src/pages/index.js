@@ -29,10 +29,13 @@ const FormContainer = styled.div`
   position: relative;
   width: 45%;
   margin: 48px 0;
-  background: white;
   @media (max-width: 800px) {
     width: 100%;
   }
+`;
+
+const Spacer = styled.div`
+  display: block;
 `;
 
 const Autofill = styled.a`
@@ -40,15 +43,21 @@ const Autofill = styled.a`
   display: inline-flex;
   margin: -32px 0 48px;
 `;
-const Spacer = styled.div`
-  display: block;
+
+const ButtonLink = styled(Link)`
+  border-bottom: 0px;
+  :hover {
+    border-bottom: 0px;
+    -webkit-filter: brightness(100%);
+    filter: brightness(100%);
+  }
 `;
 
 const SubmitButton = styled.label`
   cursor: pointer;
 
   background-color: rgb(16, 151, 181);
-  padding: 18px 32px;
+  padding: 17px 32px 19px;
   border-radius: 32px;
   color: white;
   font-weight: 500;
@@ -61,7 +70,6 @@ const SubmitButton = styled.label`
   user-select: none;
 
   :hover {
-    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
     background-color: rgb(16, 124, 148);
   }
 `;
@@ -135,12 +143,12 @@ const IndexPage = () => {
             Try an example URL
           </Autofill>
           <Spacer />
-          <Link to={`ntap?url=${encodeURIComponent(url)}`}>
+          <ButtonLink to={`ntap?url=${encodeURIComponent(url)}`}>
             <SubmitButton>
               <Input />
               Measure it!
             </SubmitButton>
-          </Link>
+          </ButtonLink>
         </FormContainer>
       </Description>
       <BackgroundImage>

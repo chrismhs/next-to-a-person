@@ -16,11 +16,11 @@ const SizeableSvg = styled.img`
     height: ${REGULAR_HEIGHT_PX * 0.7}px;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     height: ${REGULAR_HEIGHT_PX * 0.5}px;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     height: ${REGULAR_HEIGHT_PX * 0.3}px;
   }
 `;

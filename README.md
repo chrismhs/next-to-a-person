@@ -9,7 +9,7 @@
 
 Next to a Person is a small project by Joao and Chris, which came about when our friend Charlie ordered an artist easel the size of her hand. <br />
 
-Some people simply can’t do dimensions online, so we thought the best idea would be to visually compare your purchase to people.
+Some people aren't good at dimensions online, so we thought the best idea would be to visually compare your purchase to people.
 
 ## 💃 How does it work?
 

@@ -19,7 +19,7 @@ import "./layout.css";
 const Page = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 2.0875rem 1.45rem;
+  padding: 2.5rem 2.0875rem 1.45rem;
   position: relative;
   height: 100vh;
   min-height: 600px;
@@ -28,7 +28,7 @@ const Page = styled.div`
 const BgImg1 = styled.img`
   position: fixed;
   margin: -100px 0 0 -100px;
-  z-index: -2;
+  z-index: -10;
 `;
 
 const Layout = ({ children }) => (
