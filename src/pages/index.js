@@ -8,6 +8,7 @@ import SEO from "../components/seo";
 import FloatingLabelInput from "../components/inputs/floatinglabelinput";
 
 import { PeopleHomePage } from "../components/people";
+import affiliate from "../properties/affiliate";
 
 const Description = styled.div`
   @media (max-width: 800px) {
@@ -121,6 +122,14 @@ const IndexPage = () => {
     document.getElementById("url-input").focus();
   }
 
+  function getEncodedUrlWithAffiliateId(urlString) {
+    const affiliatedUrl =
+      urlString.indexOf("?") > -1
+        ? `${urlString}&tag=${affiliate.affiliateId}`
+        : `${urlString}?tag=${affiliate.affiliateId}`;
+    return encodeURIComponent(affiliatedUrl);
+  }
+
   return (
     <Layout>
       <SEO title="Next to a person" />
@@ -144,7 +153,7 @@ const IndexPage = () => {
             Try an example URL
           </Autofill>
           <Spacer />
-          <ButtonLink to={`ntap?url=${encodeURIComponent(url)}`}>
+          <ButtonLink to={`ntap?url=${getEncodedUrlWithAffiliateId(url)}`}>
             <SubmitButton>
               <Input />
               Measure it!

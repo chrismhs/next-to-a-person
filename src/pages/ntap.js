@@ -93,36 +93,19 @@ const NextToAPerson = () => {
   const [price, setPrice] = useState();
   const person = choosePerson();
 
+  const windowUrl = window.location.href;
+  const url = new URL(windowUrl);
+  const amazonUrl = decodeURIComponent(url.searchParams.get("url"));
+
   useEffect(() => {
     async function fetchImage() {
-      const urlString = window.location.href;
-      const url = new URL(urlString);
-      const decoded = decodeURIComponent(url.searchParams.get("url"));
-
-      /*
-      const result = {
-        image: {
-          heightPx: 271,
-          widthPx: 522,
-          orientation: "horizontal",
-          publicImageId:
-            "Intex_Simple_Spa_28482_Hot_Tub_795_litres_Bubble_Massage_196_x_66_cm_with_Relaxation_Heating_Accessories",
-        },
-        dimensions: {
-          unit: "cm",
-          dimensions: [196, 196, 66],
-          originalDimensionStr: "196 x 196 x 66 cm",
-        },
-      };
-      */
-
       try {
         const response = await fetch(
           "https://us-central1-jvmartins-projects.cloudfunctions.net/amazonNextTAP",
           // "http://localhost:8081/amazonNextTAP",
           {
             method: "POST",
-            body: JSON.stringify({ url: decoded }),
+            body: JSON.stringify({ url: amazonUrl }),
             headers: {
               "Content-Type": "application/json",
             },
@@ -139,9 +122,7 @@ const NextToAPerson = () => {
         setError(false);
 
         setImage(
-          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${
-            result.image.publicImageId
-          }`
+          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${result.image.publicImageId}`
         );
         setDimensions(result.dimensions);
       } catch (e) {
@@ -157,7 +138,7 @@ const NextToAPerson = () => {
       <SEO title="Your product next to a person" />
       <Link to="/">
         <BackArrow width="7" height="10" viewBox="0 0 7 10" fill="none">
-          <path d="M6 1L2 5.02488L5.95054 9" stroke-width="2" />
+          <path d="M6 1L2 5.02488L5.95054 9" strokeWidth="2" />
         </BackArrow>
         Measure another product
       </Link>
