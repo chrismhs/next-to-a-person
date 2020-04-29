@@ -156,7 +156,7 @@ const NextToAPerson = () => {
       {price && (
         <AdditionalInformation>
           <Price>Price: {price} | </Price>
-          <a href="">Buy this product on amazon</a>
+          <a href="">Buy this product on Amazon</a>
         </AdditionalInformation>
       )}
 
