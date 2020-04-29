@@ -5,8 +5,10 @@ import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Loader from "../components/loader";
 
 import { Man, Woman } from "../components/people";
+import MeasuringBar from "../images/measuringbar";
 
 const choosePerson = () => {
   const idx = Math.round(Math.random());
@@ -87,7 +89,7 @@ const NextToAPerson = () => {
   const [imageHeight, setImageHeight] = useState();
   const [imageWidth, setImageWidth] = useState();
   const [error, setError] = useState(false);
-  const [title, setTitle] = useState("Next to a person");
+  const [title, setTitle] = useState("");
   const [price, setPrice] = useState();
   const person = choosePerson();
 
@@ -177,7 +179,7 @@ const NextToAPerson = () => {
           {person === "man" && <Man />}
         </DisplayContainer>
       ) : (
-        <div>Loading</div>
+        <Loader />
       )}
     </Layout>
   );

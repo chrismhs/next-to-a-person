@@ -18,7 +18,7 @@ const FooterContainer = styled.footer`
     position: relative;
   }
 
-  @media (max-height: 800px) {
+  @media (max-height: 600px) {
     position: relative;
   }
 `;

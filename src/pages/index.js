@@ -18,6 +18,7 @@ const Description = styled.div`
 `;
 
 const TextContainer = styled.div`
+  margin-top: 2rem;
   width: 45%;
 
   @media (max-width: 800px) {
