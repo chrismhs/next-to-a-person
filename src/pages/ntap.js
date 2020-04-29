@@ -99,10 +99,14 @@ const NextToAPerson = () => {
   const [price, setPrice] = useState();
   const person = choosePerson();
 
-  useEffect(() => {
+  function getDecodedAmazonUrl() {
     const windowUrl = window.location.href;
     const url = new URL(windowUrl);
-    const amazonUrl = decodeURIComponent(url.searchParams.get("url"));
+    return decodeURIComponent(url.searchParams.get("url"));
+  }
+
+  useEffect(() => {
+    const amazonUrl = getDecodedAmazonUrl();
 
     async function fetchImage() {
       try {
@@ -152,7 +156,9 @@ const NextToAPerson = () => {
       {price && (
         <AdditionalInformation>
           <Price>Price: {price} | </Price>
-          <a href="">Buy this product on Amazon</a>
+          <a target="_blank" href={getDecodedAmazonUrl()}>
+            Buy this product on Amazon
+          </a>
         </AdditionalInformation>
       )}
 
