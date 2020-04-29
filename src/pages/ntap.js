@@ -92,7 +92,6 @@ const DisplayContainer = styled.div`
 
 const NextToAPerson = () => {
   const [image, setImage] = useState();
-  const [dimensions, setDimensions] = useState();
   const [imageHeight, setImageHeight] = useState();
   const [imageWidth, setImageWidth] = useState();
   const [error, setError] = useState(false);
@@ -100,11 +99,11 @@ const NextToAPerson = () => {
   const [price, setPrice] = useState();
   const person = choosePerson();
 
-  const windowUrl = window.location.href;
-  const url = new URL(windowUrl);
-  const amazonUrl = decodeURIComponent(url.searchParams.get("url"));
-
   useEffect(() => {
+    const windowUrl = window.location.href;
+    const url = new URL(windowUrl);
+    const amazonUrl = decodeURIComponent(url.searchParams.get("url"));
+
     async function fetchImage() {
       try {
         const response = await fetch(
@@ -129,11 +128,8 @@ const NextToAPerson = () => {
         setError(false);
 
         setImage(
-          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${
-            result.image.publicImageId
-          }`
+          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${result.image.publicImageId}`
         );
-        setDimensions(result.dimensions);
       } catch (e) {
         setError(true);
       }
@@ -165,7 +161,7 @@ const NextToAPerson = () => {
           Sorry! It was not possible to get your product next to a person!
         </div>
       )}
-      {image && dimensions && !error ? (
+      {image && !error ? (
         <DisplayContainer>
           {person === "woman" && <Woman />}
           <ProductImage
