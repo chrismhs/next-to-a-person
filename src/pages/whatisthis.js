@@ -24,7 +24,7 @@ const WhatIsThis = () => (
           Joao
         </a>{" "}
         and{" "}
-        <a href="https://chris.hastings-spital.co.uk" target_="_blank">
+        <a href="https://chris.hastings-spital.co.uk" target="_blank">
           Chris
         </a>
         , which came about when our friend Charlie ordered an artist easel the
@@ -37,8 +37,8 @@ const WhatIsThis = () => (
       <h3>How does it work?</h3>
       <p>
         Next to a Person scans an Amazon listing for the dimensions. It then
-        takes the main image and calculates resizes it compared to an average
-        sized human, which is 1.7m for a man and 1.6m for a woman.
+        takes the main image and resizes it compared to an average sized human,
+        which is 1.7m for a man and 1.6m for a woman.
       </p>
       <p>
         We do a little bit of image analysis using Cloud Vision API to remove as
@@ -50,10 +50,10 @@ const WhatIsThis = () => (
       <p>
         Who knows. Theoretically, this could work with many more e-commerce
         websites, or could be a shopify plug-in, but we also think a 3D
-        comparison would be intersting to build. If you want to get involved,
+        comparison would be interesting to build. If you want to get involved,
         please head over to the{" "}
         <a href="https://github.com/chrismhs/next-to-a-person" target="_blank">
-          GitHub page
+          GitHub repo
         </a>
         !
       </p>
