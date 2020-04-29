@@ -121,7 +121,8 @@ const NextToAPerson = () => {
   const [error, setError] = useState(false);
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState();
-  const person = choosePerson();
+  const [issueReported, setIssueReported] = useState(false);
+  const [person, setPerson] = useState("");
 
   function getDecodedAmazonUrl() {
     const windowUrl = window.location.href;
@@ -131,6 +132,8 @@ const NextToAPerson = () => {
 
   useEffect(() => {
     const amazonUrl = getDecodedAmazonUrl();
+    const personChosen = choosePerson();
+    setPerson(personChosen);
 
     async function fetchImage() {
       try {
@@ -150,7 +153,7 @@ const NextToAPerson = () => {
         setTitle(result.product.title);
         setPrice(result.product.price);
 
-        const { widthPx, heightPx } = calculateImageSize(person, result);
+        const { widthPx, heightPx } = calculateImageSize(personChosen, result);
         setImageHeight(heightPx);
         setImageWidth(widthPx);
         setError(false);
@@ -205,18 +208,23 @@ const NextToAPerson = () => {
       {!image && !error && <Loader />}
       <Feedback>
         Doesn't look right?{" "}
-        <IssueButton
-          onClick={e => {
-            e.preventDefault();
-            trackCustomEvent({
-              category: "usage",
-              action: "user_reported_error",
-              value: getDecodedAmazonUrl(),
-            });
-          }}
-        >
-          Let us know
-        </IssueButton>
+        {!issueReported ? (
+          <IssueButton
+            onClick={e => {
+              setIssueReported(true);
+              e.preventDefault();
+              trackCustomEvent({
+                category: "usage",
+                action: "user_reported_error",
+                value: getDecodedAmazonUrl(),
+              });
+            }}
+          >
+            Let us know
+          </IssueButton>
+        ) : (
+          "Thanks!"
+        )}
       </Feedback>
     </Layout>
   );
