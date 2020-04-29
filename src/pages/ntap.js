@@ -159,7 +159,9 @@ const NextToAPerson = () => {
         setError(false);
 
         setImage(
-          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${result.image.publicImageId}`
+          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${
+            result.image.publicImageId
+          }`
         );
       } catch (e) {
         setError(true);
@@ -191,7 +193,8 @@ const NextToAPerson = () => {
 
       {error && (
         <div>
-          Sorry! It was not possible to get your product next to a person!
+          Sorry, it was not possible to get your product next to a person. It's
+          possible the listing doesn't have dimensions.
         </div>
       )}
       {image && !error && (
