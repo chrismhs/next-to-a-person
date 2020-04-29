@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { trackCustomEvent } from "gatsby-plugin-google-analytics";
 
 import { Link } from "gatsby";
 
@@ -90,6 +91,29 @@ const DisplayContainer = styled.div`
   margin-top: 24px;
 `;
 
+const Feedback = styled.div`
+  font-size: 0.875rem;
+`;
+
+const IssueButton = styled.button`
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #1097b5;
+  padding: 0;
+  margin-bottom: 2px;
+
+  :hover {
+    border-bottom: 2px solid #1097b5;
+    margin-bottom: 0;
+  }
+
+  :disabled {
+    color: #333;
+    cursor: default;
+  }
+`;
+
 const NextToAPerson = () => {
   const [image, setImage] = useState();
   const [dimensions, setDimensions] = useState();
@@ -178,6 +202,29 @@ const NextToAPerson = () => {
       ) : (
         <Loader />
       )}
+      <Feedback>
+        Doesn't look right?{" "}
+        <IssueButton
+          onClick={e => {
+            // To stop the page reloading
+            e.preventDefault();
+            // Lets track that custom click
+            trackCustomEvent({
+              // string - required - The object that was interacted with (e.g.video)
+              category: "Special Button",
+              // string - required - Type of interaction (e.g. 'play')
+              action: "Click",
+              // string - optional - Useful for categorizing events (e.g. 'Spring Campaign')
+              label: "Gatsby Plugin Example Campaign",
+              // number - optional - Numeric value associated with the event. (e.g. A product ID)
+              value: 43,
+            });
+            //... Other logic here
+          }}
+        >
+          Let us know
+        </IssueButton>
+      </Feedback>
     </Layout>
   );
 };
