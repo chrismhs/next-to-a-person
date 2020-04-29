@@ -156,9 +156,7 @@ const NextToAPerson = () => {
         setError(false);
 
         setImage(
-          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${
-            result.image.publicImageId
-          }`
+          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${result.image.publicImageId}`
         );
       } catch (e) {
         setError(true);
@@ -209,20 +207,12 @@ const NextToAPerson = () => {
         Doesn't look right?{" "}
         <IssueButton
           onClick={e => {
-            // To stop the page reloading
             e.preventDefault();
-            // Lets track that custom click
             trackCustomEvent({
-              // string - required - The object that was interacted with (e.g.video)
-              category: "Special Button",
-              // string - required - Type of interaction (e.g. 'play')
-              action: "Click",
-              // string - optional - Useful for categorizing events (e.g. 'Spring Campaign')
-              label: "Gatsby Plugin Example Campaign",
-              // number - optional - Numeric value associated with the event. (e.g. A product ID)
-              value: 43,
+              category: "usage",
+              action: "user_reported_error",
+              value: getDecodedAmazonUrl(),
             });
-            //... Other logic here
           }}
         >
           Let us know
