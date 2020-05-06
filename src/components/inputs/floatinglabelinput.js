@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import MeasuringBar from "../../images/measuringbar";
+import MeasuringBar from "../measuringbar";
 
 const Container = styled.div`
   height: 60px;
@@ -50,6 +50,7 @@ const FloatingInput = styled.input`
   outline: none;
   font-size: 1em;
   background: transparent;
+
   &::placeholder {
     color: #9b9b9b;
     opacity: ${props => (props.active ? 1 : 0)};

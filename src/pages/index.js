@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import styled from "styled-components";
 
 import Layout from "../components/layout";
@@ -16,6 +16,11 @@ const Description = styled.div`
     -ms-transform: translateY(0);
     transform: translateY(0);
   }
+`;
+
+const ValidationMessage = styled.div`
+  color: red;
+  margin-top: 28px;
 `;
 
 const TextContainer = styled.div`
@@ -47,7 +52,7 @@ const Autofill = styled.a`
   margin: -32px 0 48px;
 `;
 
-const ButtonLink = styled(Link)`
+const ButtonLink = styled.a`
   border: none;
   cursor: pointer;
   background-color: rgb(16, 151, 181);
@@ -105,6 +110,7 @@ const BackgroundImage = styled.div`
 `;
 const IndexPage = () => {
   const [url, setUrl] = useState("");
+  const [validationMessage, setValidationMessage] = useState("");
 
   function getRandomUrl() {
     const urls = [
@@ -118,9 +124,23 @@ const IndexPage = () => {
 
     return urls[Math.round(Math.random() * urls.length - 1)];
   }
+
   function autoFill() {
     setUrl(getRandomUrl());
     document.getElementById("url-input").focus();
+  }
+
+  function submit() {
+    if (
+      !url ||
+      url.toLowerCase().indexOf("amazon") === -1 ||
+      url.toLowerCase().indexOf("/dp") === -1
+    ) {
+      setValidationMessage("Please provide a valid URL");
+      return;
+    }
+    setValidationMessage(null);
+    navigate(`/ntap?url=${getEncodedUrlWithAffiliateId(url)}`);
   }
 
   function getEncodedUrlWithAffiliateId(urlString) {
@@ -154,9 +174,10 @@ const IndexPage = () => {
             Try an example URL
           </Autofill>
           <Spacer />
-          <ButtonLink to={`ntap?url=${getEncodedUrlWithAffiliateId(url)}`}>
-            Measure it!
-          </ButtonLink>
+          <ButtonLink onClick={submit}>Measure it!</ButtonLink>
+          {validationMessage && (
+            <ValidationMessage>{validationMessage}</ValidationMessage>
+          )}
         </FormContainer>
       </Description>
       <BackgroundImage>

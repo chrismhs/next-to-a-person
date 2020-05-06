@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import MeasuringBar from "../images/measuringbar";
+import MeasuringBar from "./measuringbar";
 
 const Container = styled.div`
   margin-top: 100px;
@@ -15,7 +15,7 @@ const MeasuringLoader = styled.div`
 
   @keyframes pulse {
     0% {
-      width: 0px;
+      width: 0;
     }
     15% {
       width: 50px;
