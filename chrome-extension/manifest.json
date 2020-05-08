@@ -3,7 +3,7 @@
   "version": "1.0",
   "description": "Get your product next to a person",
   "manifest_version": 2,
-  "permissions": ["activeTab", "tabs"],
+  "permissions": ["tabs"],
   "background": {
     "scripts": ["extension.js"],
     "persistent": false
