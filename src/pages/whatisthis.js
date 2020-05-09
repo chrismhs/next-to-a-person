@@ -20,11 +20,19 @@ const WhatIsThis = () => (
       <h2>What is this?</h2>
       <p>
         Next to a Person is a small project by{" "}
-        <a href="https://jvmartins.com" target="_blank">
+        <a
+          href="https://jvmartins.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Joao
         </a>{" "}
         and{" "}
-        <a href="https://chris.hastings-spital.co.uk" target="_blank">
+        <a
+          href="https://chris.hastings-spital.co.uk"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Chris
         </a>
         , which came about when our friend Charlie ordered an artist easel the
@@ -52,10 +60,14 @@ const WhatIsThis = () => (
         websites, or could be a shopify plug-in, but we also think a 3D
         comparison would be interesting to build. If you want to get involved,
         please head over to the{" "}
-        <a href="https://github.com/chrismhs/next-to-a-person" target="_blank">
-          GitHub repo
+        <a
+          href="https://github.com/chrismhs/next-to-a-person"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub repository
         </a>
-        !
+        .
       </p>
     </Container>
   </Layout>

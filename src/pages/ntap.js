@@ -83,7 +83,7 @@ const AdditionalInformation = styled.div`
 `;
 
 const Price = styled.div`
-  padding: 5px;
+  padding: 5px 5px 5px 0;
 `;
 
 const DisplayContainer = styled.div`
@@ -159,7 +159,9 @@ const NextToAPerson = () => {
         setError(false);
 
         setImage(
-          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${result.image.publicImageId}`
+          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${
+            result.image.publicImageId
+          }`
         );
       } catch (e) {
         setError(true);
@@ -181,13 +183,16 @@ const NextToAPerson = () => {
       <ProductTitle>{title}</ProductTitle>
 
       {price && (
-        <AdditionalInformation>
-          <Price>Price: {price} | </Price>
-          <a target="_blank" href={getDecodedAmazonUrl()}>
-            Buy this product on Amazon
-          </a>
-        </AdditionalInformation>
+        <div>
+          <AdditionalInformation>
+            <Price>Price: {price} | </Price>
+            <a target="_blank" href={getDecodedAmazonUrl()}>
+              Buy this product on Amazon
+            </a>
+          </AdditionalInformation>
+        </div>
       )}
+      <div>This {person} is 180cm (5'11) tall.</div>
 
       {error && (
         <div>

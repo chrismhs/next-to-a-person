@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, navigate } from "gatsby";
+import { navigate } from "gatsby";
 import styled from "styled-components";
 
 import Layout from "../components/layout";
