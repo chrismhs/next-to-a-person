@@ -34,6 +34,9 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     }
   );
 
-  const newUrl = `${url}&tag=nexttoaperson-21&ntap_updated=true`;
+  let newUrl = `${url}?tag=nexttoaperson-21&ntap_updated=true`;
+  if (url.indexOf("?") > -1) {
+    newUrl = `${url}&tag=nexttoaperson-21&ntap_updated=true`;
+  }
   chrome.tabs.update(tabId, { url: newUrl });
 });

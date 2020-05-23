@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "public",
+    "site": "nexttoaperson",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

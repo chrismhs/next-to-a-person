@@ -8,63 +8,23 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Loader from "../components/loader";
 
-import { Man, Woman } from "../components/people";
-
-const choosePerson = () => {
-  const idx = Math.round(Math.random());
-  if (idx === 0) {
-    return "man";
-  }
-  return "woman";
-};
-
-const calculateImageSize = (person, { image, dimensions }) => {
-  const personHeightCm = person === "man" ? 170 : 160;
-  const ratePersonPxCm = 470 / personHeightCm;
-
-  let productProportionalHeightPx;
-  let productProportionalWidthPx;
-
-  // 3% more to account for white padding
-  let maxDimension = Math.max(...dimensions.dimensions);
-  maxDimension += maxDimension * 0.03;
-  if (image.orientation === "horizontal") {
-    productProportionalWidthPx = maxDimension * ratePersonPxCm;
-  } else {
-    productProportionalHeightPx = maxDimension * ratePersonPxCm;
-  }
-
-  return {
-    heightPx: productProportionalHeightPx,
-    widthPx: productProportionalWidthPx,
-  };
-};
-
 const ProductImage = styled.img`
-  height: ${({ proportionalHeight }) =>
-    proportionalHeight ? `${proportionalHeight}px` : "auto"};
-  width: ${({ proportionalWidth }) =>
-    proportionalWidth ? `${proportionalWidth}px` : "auto"};
+  height: auto;
+  width: auto;
 
   @media (max-width: 1000px) {
-    height: ${({ proportionalHeight }) =>
-      proportionalHeight ? `${proportionalHeight * 0.7}px` : "auto"};
-    width: ${({ proportionalWidth }) =>
-      proportionalWidth ? `${proportionalWidth * 0.7}px` : "auto"};
+    height: auto;
+    width: auto;
   }
 
   @media (max-width: 700px) {
-    height: ${({ proportionalHeight }) =>
-      proportionalHeight ? `${proportionalHeight * 0.5}px` : "auto"};
-    width: ${({ proportionalWidth }) =>
-      proportionalWidth ? `${proportionalWidth * 0.5}px` : "auto"};
+    height: auto;
+    width: auto;
   }
 
   @media (max-width: 500px) {
-    height: ${({ proportionalHeight }) =>
-      proportionalHeight ? `${proportionalHeight * 0.3}px` : "auto"};
-    width: ${({ proportionalWidth }) =>
-      proportionalWidth ? `${proportionalWidth * 0.3}px` : "auto"};
+    height: auto;
+    width: auto;
   }
 `;
 
@@ -116,13 +76,10 @@ const IssueButton = styled.button`
 
 const NextToAPerson = () => {
   const [image, setImage] = useState();
-  const [imageHeight, setImageHeight] = useState();
-  const [imageWidth, setImageWidth] = useState();
   const [error, setError] = useState(false);
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState();
   const [issueReported, setIssueReported] = useState(false);
-  const [person, setPerson] = useState("");
 
   function getDecodedAmazonUrl() {
     const windowUrl = window.location.href;
@@ -132,8 +89,6 @@ const NextToAPerson = () => {
 
   useEffect(() => {
     const amazonUrl = getDecodedAmazonUrl();
-    const personChosen = choosePerson();
-    setPerson(personChosen);
 
     async function fetchImage() {
       try {
@@ -150,19 +105,16 @@ const NextToAPerson = () => {
         );
 
         const result = await response.json();
+        if (!result.image.concatImageUrl) {
+          setError(true);
+          return;
+        }
+
         setTitle(result.product.title);
         setPrice(result.product.price);
+        setImage(result.image.concatImageUrl);
 
-        const { widthPx, heightPx } = calculateImageSize(personChosen, result);
-        setImageHeight(heightPx);
-        setImageWidth(widthPx);
         setError(false);
-
-        setImage(
-          `https://res.cloudinary.com/dvvoecsqo/image/upload/v1588024504/${
-            result.image.publicImageId
-          }`
-        );
       } catch (e) {
         setError(true);
       }
@@ -192,7 +144,7 @@ const NextToAPerson = () => {
           </AdditionalInformation>
         </div>
       )}
-      <div>This {person} is 180cm (5'11) tall.</div>
+      {/* TODO <div>This person is 180cm (5'11) tall.</div>*/}
 
       {error && (
         <div>
@@ -202,13 +154,7 @@ const NextToAPerson = () => {
       )}
       {image && !error && (
         <DisplayContainer>
-          {person === "woman" && <Woman />}
-          <ProductImage
-            src={image}
-            proportionalHeight={imageHeight}
-            proportionalWidth={imageWidth}
-          />
-          {person === "man" && <Man />}
+          <ProductImage src={image} />
         </DisplayContainer>
       )}
       {!image && !error && <Loader />}
