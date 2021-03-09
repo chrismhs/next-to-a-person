@@ -115,7 +115,6 @@ const IndexPage = () => {
   function getRandomUrl() {
     const urls = [
       "https://www.amazon.co.uk/Martin-Smith-Acoustic-Package-Strings/dp/B00413PFFC",
-      "https://www.amazon.co.uk/Intex-Octagonal-Pure-Spa-Therapy/dp/B00O8S0GN6",
       "https://www.amazon.co.uk/Intex-Massage-Heating-Accessories-Relaxation/dp/B083QF7TZY/",
       "https://www.amazon.co.uk/Kingrack-Capacity-Organize-Countertop-Supplies/dp/B082XP987N",
       "https://www.amazon.co.uk/dp/B07VCJCWVJ/",

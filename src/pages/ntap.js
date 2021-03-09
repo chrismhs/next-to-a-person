@@ -93,8 +93,7 @@ const NextToAPerson = () => {
     async function fetchImage() {
       try {
         const response = await fetch(
-          "https://us-central1-jvmartins-projects.cloudfunctions.net/amazonNextTAP",
-          // "http://localhost:8081/amazonNextTAP",
+          "https://ntap-server-zqccefsdpq-ue.a.run.app/amazon",
           {
             method: "POST",
             body: JSON.stringify({ url: amazonUrl }),
